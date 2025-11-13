@@ -216,3 +216,52 @@ body:has(#theme-toggle:checked) h2 { color: #ffed8a; }
   text-align: center;
   margin: 0 0 12px 0;
 }
+.pdf-gallery {
+  margin-bottom: 2.5em;
+}
+
+.pdf-item {
+  background: #f8f8ff;
+  border: 2px solid #e0e0ef;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(88,110,230,0.07);
+  margin-bottom: 30px;
+  padding: 18px 16px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.pdf-item:hover {
+  box-shadow: 0 4px 24px rgba(88,110,230,0.18);
+  border-color: #4671ea;
+}
+
+.pdf-item h3 {
+  color: #2b2b6e;
+  font-size: 1.14rem;
+  margin-top: 0;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.pdf-item iframe {
+  width: 100%;
+  border: 1.5px solid #cacadb;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.pdf-item p {
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+.pdf-item a {
+  color: #4671ea;
+  text-decoration: underline;
+}
+
+.pdf-item a:hover {
+  color: #2347ae;
+  text-decoration: underline wavy;
+}
