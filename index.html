@@ -7,11 +7,21 @@
 </head>
 <body>
     <main class="container">
-        <h1>Everything about Ted Bennett</h1>
+        <div class="top-bar">
+            <a href="https://leafy460.github.io/" class="btn">Back to APPLE Home</a>
+            
+            <!-- Theme toggle using CSS only -->
+            <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+            <label for="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark">
+                <span class="toggle-sun">☀️</span>
+                <span class="toggle-moon">🌙</span>
+            </label>
+        </div>
+        
+        <h1>Everything about Ted Bennett!</h1>
         
         <section class="pdf-section">
             <h2>Biography PDF</h2>
-            <!-- Update the PDF name as needed -->
             <iframe src="bennett_files.pdf" width="100%" height="600" frameborder="0"></iframe>
             <p>If you can't see the PDF, <a href="ted-bennett.pdf" target="_blank">click here to download.</a></p>
         </section>
