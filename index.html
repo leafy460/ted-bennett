@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case File — Public Overview</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- REPLACE: change favicon / meta info as needed -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 id="site-title">Case Overview: Public Record</h1>
+      <nav id="main-nav" aria-label="Main navigation">
+        <button class="nav-btn" data-target="summary">Summary</button>
+        <button class="nav-btn" data-target="timeline">Timeline</button>
+        <button class="nav-btn" data-target="evidence">Evidence</button>
+        <button class="nav-btn" data-target="quotes">Quotes</button>
+        <button class="nav-btn" data-target="resources">Resources</button>
+        <button class="nav-btn" data-target="contact">Contact / Tip-line</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- SUMMARY -->
+    <section id="summary" class="page-section active" tabindex="0">
+      <h2>Summary</h2>
+      <!-- REPLACE TEXT: Short summary of case. Be sure to keep sensitive details summarized. -->
+      <p id="summary-text">
+        This page summarizes public court documents filed in Ramsey County related to charges against an individual.
+        The complaint alleges inappropriate sexual contact with a minor and supplying alcohol and narcotics. The
+        complaint and probable cause statement are public records. For full source documents see the "Resources" tab.
+      </p>
+      <p class="source-note">Source: uploaded complaint (court document). :contentReference[oaicite:1]{index=1}</p>
+
+      <div class="actions">
+        <button id="toTimeline" class="primary-btn">View Timeline</button>
+        <a id="downloadPdf" class="link-btn" href="bennett_files.pdf" download>Download original PDF</a>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="page-section" tabindex="0">
+      <h2>Timeline (editable)</h2>
+      <ul id="timeline-list" class="timeline-list">
+        <!-- REPLACE / EDIT: add or remove timeline items -->
+        <li><strong>October 2024/2025:</strong> Communications between teacher and student began (per complaint).</li>
+        <li><strong>Oct 15 – Nov 10, 2025 (alleged):</strong> Dates listed in complaint for alleged sexual activity. :contentReference[oaicite:2]{index=2}</li>
+        <li><strong>Nov 6, 2025:</strong> Alleged provision of alcohol and Adderall in school parking lot (per complaint). :contentReference[oaicite:3]{index=3}</li>
+        <li><strong>Nov 10–12, 2025:</strong> Administrative leave and complaint filing; arrest and order of detention. :contentReference[oaicite:4]{index=4}</li>
+      </ul>
+      <div class="actions">
+        <button class="secondary-btn" id="addTimeline">Add Timeline Item</button>
+        <button class="secondary-btn" id="exportTimeline">Export Timeline (JSON)</button>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section id="evidence" class="page-section" tabindex="0">
+      <h2>Evidence (public record summary)</h2>
+      <!-- REPLACE: summarise evidence; do NOT post graphic or identifiable private info beyond public docs -->
+      <p id="evidence-text">
+        The complaint references forensic phone examinations, school surveillance, electronic communications,
+        seized devices and handwritten notes. Evidence summaries should stick to what is in the public filing
+        and avoid adding unverified details.
+      </p>
+
+      <h3>Documents</h3>
+      <ul>
+        <li><a href="bennett_files.pdf" download>Complaint & Probable Cause (PDF)</a></li>
+        <!-- REPLACE: add links to other public documents or redacted exhibits -->
+      </ul>
+
+      <h3>Media (redactions recommended)</h3>
+      <p class="warning">If you plan to publish images, screenshots, or chat logs, <strong>redact</strong> personal phone numbers,
+      student names, and other identifying details that are not already public record.</p>
+    </section>
+
+    <!-- QUOTES -->
+    <section id="quotes" class="page-section" tabindex="0">
+      <h2>Selected Quotes & Official Language</h2>
+      <!-- IMPORTANT: we avoid reproducing sexually explicit content involving minors. We include short, non-graphic quotes only. -->
+      <blockquote>
+        <!-- REPLACE: put short safe quotes you want to show; keep under 25 words for each verbatim quote. -->
+        <p>"Complainant requests that Defendant ... be arrested or that other lawful steps be taken to obtain Defendant's appearance in court." </p>
+        <footer>— Excerpt, Court Complaint. :contentReference[oaicite:5]{index=5}</footer>
+      </blockquote>
+
+      <div class="actions">
+        <button id="addQuote" class="secondary-btn">Add Quote</button>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="page-section" tabindex="0">
+      <h2>Resources & Guidance</h2>
+      <p>
+        Suggested resources for students, parents and staff:
+      </p>
+      <ul>
+        <li><strong>Counseling / Crisis Lines:</strong> (Add local numbers)</li>
+        <li><strong>Legal / Public Records:</strong> Contact the Prosecuting Attorney's office for steps and records. </li>
+        <li><strong>School Reporting:</strong> Add school policy links and reporting hotline details.</li>
+      </ul>
+
+      <!-- REPLACE: add links to local support services, school policies, and safe hotline numbers -->
+    </section>
+
+    <!-- CONTACT / TIP-LINE -->
+    <section id="contact" class="page-section" tabindex="0">
+      <h2>Tip-line & Contact</h2>
+      <p>
+        If you have information relevant to this public case, please use official law enforcement channels.
+        </p>
+      <form id="tipForm" class="tip-form" onsubmit="return false;">
+        <!-- REPLACE: change action if you want to send tips to your own server. -->
+        <label for="tipName">Your name (optional)</label>
+        <input id="tipName" name="tipName" type="text" placeholder="Optional" />
+
+        <label for="tipContact">Contact (email / phone) (optional)</label>
+        <input id="tipContact" name="tipContact" type="text" placeholder="Optional" />
+
+        <label for="tipMessage">Message / Tip (required)</label>
+        <textarea id="tipMessage" name="tipMessage" required placeholder="Provide details (do not post private info publicly)"></textarea>
+
+        <div class="form-actions">
+          <button id="submitTip" class="primary-btn">Submit Tip (local save)</button>
+          <button id="clearTip" class="secondary-btn">Clear</button>
+        </div>
+
+        <p class="note">Note: the demo tip submission saves locally in the browser. Replace the submission code in <code>script.js</code> with your server endpoint to collect tips securely.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Prepared for school community review. Edit content responsibly. Do not post identifying info about alleged minors beyond the public record. </p>
+      <small>Document source: court complaint (uploaded). :contentReference[oaicite:6]{index=6}</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
