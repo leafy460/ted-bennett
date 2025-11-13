@@ -9,7 +9,6 @@
     <main class="container">
         <div class="top-bar">
             <a href="https://leafy460.github.io/" class="btn">Home</a>
-            
             <!-- Theme toggle using CSS only -->
             <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
             <label for="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark">
@@ -20,10 +19,23 @@
         
         <h1>Everything about Ted Bennett</h1>
         
-        <section class="pdf-section">
-            <h2>I strongly suggest not to read this it contains a lot of explicit material read it at your own risk</h2>
-            <iframe src="bennett_files.pdf" width="100%" height="600" frameborder="0"></iframe>
-            <p>If you can't see the PDF, <a href="ted-bennett.pdf" target="_blank">click here to download.</a></p>
+        <!-- Spoiler Reveal Button -->
+        <section class="spoiler-section">
+            <input type="checkbox" id="spoiler-toggle" class="spoiler-toggle-checkbox" />
+            <label for="spoiler-toggle" class="spoiler-btn">
+                ⚠️ Reveal Spoiler Warning & PDF
+            </label>
+
+            <div class="spoiler-content">
+                <h2>
+                    I strongly suggest not to read this; it contains a lot of explicit material.  
+                    Read it at your own risk.
+                </h2>
+                <iframe src="bennett_files.pdf" width="100%" height="600" frameborder="0"></iframe>
+                <p>
+                    If you can't see the PDF, <a href="bennett_files.pdf" target="_blank">click here to download.</a>
+                </p>
+            </div>
         </section>
         
         <section class="img-gallery">
