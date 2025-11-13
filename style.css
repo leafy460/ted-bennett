@@ -160,13 +160,34 @@ body:has(#theme-toggle:checked) h2 { color: #ffed8a; }
     display: block;
 }
 /* No :has required; works everywhere! */
-.images, .article-img {
+.article-img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
   justify-items: center;
   align-items: start;
   margin-top: 20px;
+}
+.article-img a img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  border: 2px solid #cacadb;
+  box-shadow: 0 2px 12px rgba(44,44,55,0.12);
+  transition: transform .27s, border-color .2s;
+  height: auto;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+.article-img a:hover img {
+  transform: scale(1.15);
+  border-color: #2b2b6e;
+  z-index: 1;
+}
+.article-img p {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0 0 12px 0;
 }
 
 /* Make sure to select images inside links for zoom effect */
