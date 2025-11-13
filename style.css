@@ -110,18 +110,22 @@ body:has(#theme-toggle:checked) .theme-toggle-btn { color: #fff; }
 body:has(#theme-toggle:checked) h1,
 body:has(#theme-toggle:checked) h2 { color: #ffed8a; }
 
-/* ---------- Spoiler Styles ---------- */
+/* ...your existing CSS setup... */
+
 .spoiler-section {
     margin-bottom: 42px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 .spoiler-toggle-checkbox {
     display: none;
 }
+/* Only show spoiler-btn at first */
 .spoiler-btn {
-    background: var(--spoiler-bg);
-    color: var(--spoiler-text);
-    border: 2px solid var(--spoiler-text);
+    background: var(--spoiler-bg, #ffe8ea);
+    color: var(--spoiler-text, #91242a);
+    border: 2px solid var(--spoiler-text, #91242a);
     font-size: 1.07rem;
     font-weight: 600;
     padding: 12px 26px;
@@ -136,54 +140,23 @@ body:has(#theme-toggle:checked) h2 { color: #ffed8a; }
     background: #ffe1ec;
     color: #bf1558;
 }
+/* Hide spoiler-content by default */
 .spoiler-content {
     display: none;
     margin: 0 auto;
     padding: 28px 8px 16px 8px;
     max-width: 800px;
-    background: var(--spoiler-bg);
-    color: var(--spoiler-text);
+    background: var(--spoiler-bg, #ffe8ea);
+    color: var(--spoiler-text, #91242a);
     border-radius: 8px;
-    border: 2.5px dashed var(--spoiler-text);
+    border: 2.5px dashed var(--spoiler-text, #91242a);
 }
-.spoiler-toggle-checkbox:checked ~ .spoiler-btn {
+/* When spoiler-toggle is checked, show */
+.spoiler-toggle-checkbox:checked + .spoiler-btn {
     filter: grayscale(80%);
     opacity: 0.6;
 }
-.spoiler-toggle-checkbox:checked ~ .spoiler-content {
+.spoiler-toggle-checkbox:checked + .spoiler-btn + .spoiler-content {
     display: block;
 }
-.spoiler-content h2 {
-    font-size: 1.2rem;
-    margin-bottom: 16px;
-    color: var(--spoiler-text);
-    text-shadow: 0 2px 16px #ffe2e7;
-}
-.spoiler-content iframe {
-    margin-top: 12px;
-    border: 2px solid var(--spoiler-text);
-    border-radius: 6px;
-    background: #fff;
-}
-.spoiler-content p {
-    color: var(--spoiler-text);
-    margin-top: 8px;
-}
-.img-gallery .images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-.img-gallery img {
-    max-width: 230px;
-    border-radius: 8px;
-    border: 2px solid #cacadb;
-    box-shadow: var(--img-shadow);
-    transition: transform .27s, border-color .2s;
-}
-.img-gallery img:hover {
-    transform: scale(1.06);
-    border-color: var(--border);
-}
+/* No :has required; works everywhere! */
